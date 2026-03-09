@@ -124,11 +124,49 @@ function PlanoCard({ plano }: { plano: Plano }) {
       <p className="mb-4 text-base font-medium text-gray-700 md:text-lg">Seu plano acompanha com:</p>
 
       {/* Benefícios */}
-      <ul className="mb-6 flex flex-col justify-center gap-2 md:gap-3">
+      <ul className="mb-4 flex flex-col justify-center gap-2 md:gap-3">
         {plano.beneficiosBase.map((b) => (
           <BeneficioItem key={b.label} {...b} />
         ))}
       </ul>
+
+      {/* Turbine seu plano */}
+      <div className="mb-6 rounded-xl bg-[#f0f9f0] border border-[#1a7a2a]/20 px-4 py-4">
+        <p className="mb-3 text-center text-[12px] font-black uppercase tracking-wide text-[#014700]">
+          Turbine seu plano
+        </p>
+        <div className="grid grid-cols-2 gap-3 place-items-center">
+          {TURBINE_PLANO.slice(0, 4).map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-1 transition hover:scale-105 hover:opacity-90"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden md:h-12 md:w-12">
+                {item.imgSrc ? (
+                  <img src={item.imgSrc} alt={item.label} className="h-full w-full rounded-full object-cover" />
+                ) : (
+                  <Icon icon={item.icon!} className="h-5 w-5 text-[#1a7a2a] md:h-6 md:w-6" />
+                )}
+              </span>
+              <span className="text-[10px] font-bold text-gray-700 md:text-[11px]">{item.label}</span>
+            </a>
+          ))}
+          <a
+            href={TURBINE_PLANO[4].href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="col-span-2 flex flex-col items-center gap-1 transition hover:scale-105 hover:opacity-90"
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden md:h-12 md:w-12">
+              <Icon icon={TURBINE_PLANO[4].icon!} className="h-5 w-5 text-[#1a7a2a] md:h-6 md:w-6" />
+            </span>
+            <span className="text-[10px] font-bold text-gray-700 md:text-[11px]">{TURBINE_PLANO[4].label}</span>
+          </a>
+        </div>
+      </div>
 
       {/* Preço */}
       <div className="mt-auto mb-4 flex items-end justify-center gap-0.5 text-[#014700]">
@@ -158,40 +196,10 @@ function PlanoCard({ plano }: { plano: Plano }) {
 
 export default function PlanosResidenciais() {
   return (
-    <div className="pt-6">
-      {/* Cards dos planos */}
-      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-        {PLANOS.map((plano) => (
-          <PlanoCard key={plano.velocidade} plano={plano} />
-        ))}
-      </div>
-
-      {/* Turbine seu plano */}
-      <div className="mt-16 rounded-2xl border-2 border-[#1a7a2a]/30 bg-[#f0f9f0] px-6 py-8 md:px-10">
-        <p className="mb-6 text-center text-[18px] font-black uppercase tracking-wide text-[#014700] md:text-xl">
-          Turbine seu plano
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
-          {TURBINE_PLANO.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 transition hover:scale-105 hover:opacity-90"
-            >
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white shadow-md overflow-hidden md:h-16 md:w-16">
-                {item.imgSrc ? (
-                  <img src={item.imgSrc} alt={item.label} className="h-full w-full rounded-full object-cover" />
-                ) : (
-                  <Icon icon={item.icon!} className="h-7 w-7 text-[#1a7a2a] md:h-8 md:w-8" />
-                )}
-              </span>
-              <span className="text-[12px] font-bold text-gray-700 md:text-[13px]">{item.label}</span>
-            </a>
-          ))}
-        </div>
-      </div>
+    <div className="grid grid-cols-1 gap-10 pt-6 sm:grid-cols-2 lg:grid-cols-3">
+      {PLANOS.map((plano) => (
+        <PlanoCard key={plano.velocidade} plano={plano} />
+      ))}
     </div>
   );
 }
