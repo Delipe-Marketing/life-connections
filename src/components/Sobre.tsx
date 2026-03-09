@@ -4,11 +4,11 @@ export default function FaleConosco() {
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center gap-12">
 
         {/* Lado esquerdo — foto da equipe */}
-        <div className="relative flex-shrink-0 w-full md:w-[420px]">
+        <div className="relative flex-shrink-0 w-full md:w-1/2 md:ml-auto">
           <img
-            src="/images/equipe.png"
+            src="/images/equipe.jpg"
             alt="Equipe Life Connections"
-            className="w-full rounded-2xl object-cover md:w-8/10 md:ml-auto"
+            className="w-full rounded-2xl object-cover md:w-8/10 "
           />
         </div>
 

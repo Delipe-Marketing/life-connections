@@ -56,7 +56,7 @@ export default function Header() {
           </a>
           <div className="flex items-center gap-5">
             <a
-              href="https://www.instagram.com/lifeconnections_br/"
+              href="https://www.instagram.com/lifeconnectionsbr/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white transition hover:text-[#C0E850]"
@@ -115,7 +115,7 @@ export default function Header() {
           {/* Hamburguer — só mobile */}
           <button
             onClick={() => setMenuAberto(!menuAberto)}
-            className="flex md:hidden items-center justify-center rounded-full p-2 text-white transition hover:bg-white/10"
+            className="flex md:hidden items-center justify-center rounded-full text-black p-2 transition"
             aria-label="Abrir menu"
           >
             <Icon
@@ -141,7 +141,7 @@ export default function Header() {
               </a>
               <div className="flex gap-4">
                 <a
-                  href="https://www.instagram.com/lifeconnections_br/"
+                  href="https://www.instagram.com/lifeconnectionsbr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white transition hover:text-[#C0E850]"
