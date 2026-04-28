@@ -95,7 +95,7 @@ function PlanoCard({ plano }: { plano: Plano }) {
   const isSemLimites = plano.isDestaque;
 
   return (
-    <div className="relative border-2 border-black flex flex-col rounded-3xl bg-white shadow-2xl overflow-visible pt-7 pb-6 px-5 md:px-7 min-h-[640px]">
+    <div className="relative border-2 border-black flex flex-col  rounded-3xl bg-white shadow-2xl overflow-visible pt-7 pb-6 px-5 md:px-7 min-h-[640px]">
       {/* Badge top */}
       <div className="absolute top-3 max-lg:top-2.5 left-1/2 -translate-x-1/2">
         <span className="whitespace-nowrap rounded-b-xl bg-[#1a1a1a] px-5 py-3 text-[13px] font-bold uppercase tracking-widest text-white shadow-lg md:px-8 md:py-4 md:text-lg">
