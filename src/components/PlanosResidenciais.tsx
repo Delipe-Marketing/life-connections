@@ -71,7 +71,7 @@ const TURBINE_PLANO: (Beneficio & { href: string })[] = [
   { imgSrc: "/images/lifetvIcon.png", label: "LifeTV", href: turbineWhatsapp("LifeTV") },
   { imgSrc: "/images/hbo.png", label: "HBO Max", href: turbineWhatsapp("HBO Max") },
   { imgSrc: "/images/lifecamIcon.png", label: "Life CAM", href: turbineWhatsapp("Life CAM") },
-  { icon: "mdi:phone-in-talk", label: "Life Fone", href: turbineWhatsapp("Life Fone") },
+  { imgSrc: "/images/lifefoneIcon.png", label: "Life Fone", href: turbineWhatsapp("Life Fone") },
 ];
 
 function BeneficioItem({ icon, imgSrc, label, bold }: Beneficio) {
@@ -161,7 +161,11 @@ function PlanoCard({ plano }: { plano: Plano }) {
             className="col-span-2 flex flex-col items-center gap-1 transition hover:scale-105 hover:opacity-90"
           >
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden md:h-12 md:w-12">
-              <Icon icon={TURBINE_PLANO[4].icon!} className="h-5 w-5 text-[#1a7a2a] md:h-6 md:w-6" />
+              {TURBINE_PLANO[4].imgSrc ? (
+                <img src={TURBINE_PLANO[4].imgSrc} alt={TURBINE_PLANO[4].label} className="h-full w-full rounded-full object-cover" />
+              ) : (
+                <Icon icon={TURBINE_PLANO[4].icon!} className="h-5 w-5 text-[#1a7a2a] md:h-6 md:w-6" />
+              )}
             </span>
             <span className="text-[10px] font-bold text-gray-700 md:text-[11px]">{TURBINE_PLANO[4].label}</span>
           </a>
