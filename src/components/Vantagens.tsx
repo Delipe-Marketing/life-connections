@@ -1,8 +1,8 @@
 const VANTAGENS = [
-  "/images/papel1.png",
-  "/images/papel2.png",
   "/images/papel3.png",
   "/images/papel4.png",
+  "/images/papel2.png",
+  "/images/papel1.png",
 ];
 
 export default function Vantagens() {
