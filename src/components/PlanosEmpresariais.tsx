@@ -34,9 +34,11 @@ export default function PlanosEmpresariais() {
 
         {/* Nome do plano */}
         <div className="mt-16 mb-4">
-          <h2 className="text-4xl font-black leading-tight text-[#014700] md:text-5xl">
-            Life<br />Empresa
-          </h2>
+          <img
+            src="/images/lifeempresaIcon.png"
+            alt="Life Empresas"
+            className="h-36 w-auto object-contain"
+          />
         </div>
 
         {/* Separador */}
